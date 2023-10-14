@@ -239,6 +239,9 @@ We need your support. Projects like this can not be successful without support f
   </a>
 </p>
 
+## Sponsors
+Want to become a sponsor! [[Become a Sponsor](https://github.com/sponsors/mokaily)]
+
 ###
 ###
 ###
