@@ -6,16 +6,10 @@ Mouse Follower is a powerful package that empowers you to create custom mouse fo
 Easy and Fast adding on feature for your Flutter Apps
 </h1>
 
-<a href="https://github.com/mokaily/mouse_follower/tree/main/example">
-<video width="500" height="600" controls>
-  <source src="https://github.com/mokaily/mouse_follower/blob/main/example/Mouse%20Follower%20Examples.mp4?raw=true" type="video/mp4">
-  Your browser does not support the video tag.
-</video></a>
+
 <a href="https://github.com/mokaily/mouse_follower/tree/main/example">Dummy example</a>
 
 <a href="https://mokaily.com/">Real world example</a>
-
-
 
 ## Why mouse_follower?
 
@@ -232,6 +226,12 @@ We need your support. Projects like this can not be successful without support f
 <p align="center">
   <a href="https://opencollective.com/mouse_follower/donate" target="_blank">
     <img src="https://opencollective.com/mouse_follower/donate/button@2x.png?color=blue" width=300 />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://www.buymeacoffee.com/mokaily" target="_blank">
+    <img src="https://bizcolumnist.com/wp-content/uploads/2022/12/bmc-full-logo.png" width=300 />
   </a>
 </p>
 
