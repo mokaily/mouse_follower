@@ -230,6 +230,12 @@ We need your support. Projects like this can not be successful without support f
 </p>
 
 <p align="center">
+  <a href="https://www.paypal.com/donate/?hosted_button_id=9PCKHLMEQJUS4" target="_blank">
+    <img src="https://raw.githubusercontent.com/aha999/DonateButtons/master/Paypal.png" width=300 />
+  </a>
+</p>
+
+<p align="center">
   <a href="https://www.buymeacoffee.com/mokaily" target="_blank">
     <img src="https://bizcolumnist.com/wp-content/uploads/2022/12/bmc-full-logo.png" width=300 />
   </a>
@@ -237,6 +243,11 @@ We need your support. Projects like this can not be successful without support f
 
 ## Sponsors
 Want to become a sponsor! [[Become a Sponsor](https://github.com/sponsors/mokaily)]
+<p align="center">
+<a href="https://github.com/sponsors/mokaily">
+<img src="https://opensheetmusicdisplay.org/wp-content/uploads/sites/2/2021/01/dkU4ADpMLKIaaETqhNFh.png" width="300">
+</a>
+</p>
 
 ###
 ###
