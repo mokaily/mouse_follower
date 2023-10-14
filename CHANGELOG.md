@@ -1,5 +1,6 @@
-## 1.1.0
+## 1.1.1
 * Re-named some variables
+* Enhanced documentation
 
 ## 1.0.0
 * Stable version prepared
