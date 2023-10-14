@@ -65,8 +65,6 @@ class MyApp extends StatelessWidget {
 ```
 <p align="center"><img src="https://github.com/mokaily/mouse_follower/blob/main/example/images/gifs/mouse.gif?raw=true" width="600"/></p>
 
-// image of the default
-
 ### 📜 `MouseFollower()` widget properties
 
 | Properties             | Required | Default                                             | Description                                                                                           |
@@ -190,7 +188,6 @@ MouseOnHoverEvent(
 <p align="center"><img src="https://github.com/mokaily/mouse_follower/blob/main/example/images/gifs/mouse3.gif?raw=true" width="600"/></p>
 
 #### 📜 magnifier
-[//]: # (put more magnifier)
 ```dart
 MouseOnHoverEvent(
     customOnHoverMouseStylesStack: [
@@ -212,7 +209,6 @@ MouseOnHoverEvent(
 
 
 #### 📜 custom icon
-[//]: # (with icon)
 ```dart
 MouseOnHoverEvent(
     onHoverMouseCursor: SystemMouseCursors.none,
