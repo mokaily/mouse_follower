@@ -63,7 +63,7 @@ class MouseFollowerProvider extends ChangeNotifier {
       Alignment? alignment,
       Size? size,
       Widget? mouseChild,
-        double? opacity,
+      double? opacity,
       Duration? latency,
       required PointerHoverEvent event}) {
     final renderBox = key.currentContext?.findRenderObject() as RenderBox?;
