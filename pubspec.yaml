@@ -1,6 +1,6 @@
 name: mouse_follower
 description: Elevate your application to new heights with the Mouse Follower feature, allowing you to customize cursor effects as desired. Designing your own effects is now incredibly simple and seamless.
-version: 0.1.0
+version: 1.1.0
 homepage: https://github.com/mokaily/mouse_follower
 
 environment:
