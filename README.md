@@ -7,6 +7,8 @@ Easy and Fast adding on feature for your Flutter Apps
 </h1>
 
 
+
+https://github.com/mokaily/mouse_follower/assets/32467495/b57973bc-4c41-4804-917d-7853530fadf2
 <a href="https://github.com/mokaily/mouse_follower/tree/main/example">Dummy example</a>
 
 <a href="https://mokaily.com/">Real world example</a>
