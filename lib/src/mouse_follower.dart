@@ -56,7 +56,9 @@ class MouseFollower extends StatelessWidget {
           final bool visibility;
 
           Widget ccc = MouseRegion(
-            cursor: state.isHover ? state.customMouseCursor ?? onHoverMouseCursor : defaultMouseCursor,
+            cursor: state.isHover
+                ? state.customMouseCursor ?? onHoverMouseCursor
+                : defaultMouseCursor,
             child: child,
           );
 
@@ -288,23 +290,24 @@ class MouseStyle extends StatelessWidget {
         // Use the provided latencyDuration or a default duration
         duration: mouseLatency,
         child: IgnorePointer(
-            child: Opacity(
-              opacity: customOpacity ?? 1.0, // Set the opacity value (0.0 = fully transparent, 1.0 = fully opaque)
-              child: AnimatedContainer(
-                transform: transform,
-                alignment: Alignment.center,
-                clipBehavior:
-                    dec == null ? Clip.none : Clip.antiAliasWithSaveLayer,
-                decoration: dec,
-                duration: animatedDuration ?? const Duration(milliseconds: 300),
-                curve: animatedCurve ?? Curves.easeOutExpo,
-                child: (isHovering &&
-                        state.child != null &&
-                        state.child.runtimeType != MouseStyle)
-                    ? state.child
-                    : child,
-              ),
+          child: Opacity(
+            opacity: customOpacity ??
+                1.0, // Set the opacity value (0.0 = fully transparent, 1.0 = fully opaque)
+            child: AnimatedContainer(
+              transform: transform,
+              alignment: Alignment.center,
+              clipBehavior:
+                  dec == null ? Clip.none : Clip.antiAliasWithSaveLayer,
+              decoration: dec,
+              duration: animatedDuration ?? const Duration(milliseconds: 300),
+              curve: animatedCurve ?? Curves.easeOutExpo,
+              child: (isHovering &&
+                      state.child != null &&
+                      state.child.runtimeType != MouseStyle)
+                  ? state.child
+                  : child,
             ),
+          ),
         ),
       ),
     );
