@@ -14,6 +14,8 @@ https://github.com/mokaily/mouse_follower/assets/32467495/b57973bc-4c41-4804-917
 
 <a href="https://mokaily.com/">Real world example</a>
 
+<a href="https://medium.com/@mokaily/mouse-follower-for-flutter-applications-651fffb1330b">Advanced Animated Examples</a>
+
 ## Why mouse_follower?
 
 - 🚀 Easy to implement
