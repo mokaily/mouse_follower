@@ -1,4 +1,4 @@
-## 1.2.0
+## 1.2.2
 * Re-named some variables
 * Enhanced documentation
 
