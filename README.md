@@ -1,5 +1,5 @@
 # Mouse Follower
-Mouse Follower is a powerful package that empowers you to create custom mouse followers for your applications, breaking through design limitations. With additional features such as [Flexible to design any shapes you want, uncomplicated properties, ease of use], it offers unparalleled flexibility and creativity in enhancing user interactions.
+Mouse Follower is a powerful package that empowers you to create custom mouse followers for your applications, breaking through design limitations. With additional features such as the flexibility to design any shape you want, uncomplicated properties, and ease of use, it offers unparalleled flexibility and creativity in enhancing user interactions.
 
 <p align="center"><img src="https://github.com/mokaily/mouse_follower/blob/main/example/mouse_follower.gif?raw=true" width="600"/></p>
 <h1 align="center"> 
@@ -9,6 +9,7 @@ Easy and Fast adding on feature for your Flutter Apps
 
 
 https://github.com/mokaily/mouse_follower/assets/32467495/b57973bc-4c41-4804-917d-7853530fadf2
+
 <a href="https://github.com/mokaily/mouse_follower/tree/main/example">Dummy example</a>
 
 <a href="https://mokaily.com/">Real world example</a>
@@ -22,7 +23,7 @@ https://github.com/mokaily/mouse_follower/assets/32467495/b57973bc-4c41-4804-917
 - ↩️ Position Control
 - ❤️ Customize the cursor shape itself
 - 💻 Documentation and Tutorials.
-- 🛡️ Null safet support.
+- 🛡️ Null safety support.
 - 🖨️ Customizable designs.
 
 ## Getting Started
@@ -45,7 +46,7 @@ import 'package:mouse_follower/mouse_follower.dart';
 
 ### ⚙️ Configuration app
 
-Add MouseFollower widget like in example.
+Add MouseFollower widget like in the example.
 
 ```dart
 class MyApp extends StatelessWidget {
@@ -244,7 +245,7 @@ We need your support. Projects like this can not be successful without support f
 </p>
 
 ## Sponsors
-Want to become a sponsor! [[Become a Sponsor](https://github.com/sponsors/mokaily)]
+Want to become a sponsor? [[Become a Sponsor](https://github.com/sponsors/mokaily)]
 <p align="center">
 <a href="https://github.com/sponsors/mokaily">
 <img src="https://opensheetmusicdisplay.org/wp-content/uploads/sites/2/2021/01/dkU4ADpMLKIaaETqhNFh.png" width="300">
