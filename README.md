@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: MouseFollower(
-          showDefaultMouse: true,
+          showDefaultMouseStyle: true,
           child:MyHomePage(),
       )
     );
