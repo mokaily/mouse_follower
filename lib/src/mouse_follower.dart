@@ -80,7 +80,8 @@ class MouseFollower extends StatelessWidget {
           } else if (showDefaultMouseStyle) {
             generatedMouseStylesStack.add(MouseStyle(
                 decoration: state.decoration.copyWith(
-                    color: Theme.of(context).primaryColor.withOpacity(0.2)),
+                    color:
+                        Theme.of(context).primaryColor.withValues(alpha: 200)),
                 visibleOnHover: false));
           }
 
@@ -98,7 +99,8 @@ class MouseFollower extends StatelessWidget {
             generatedOnHoverMouseStylesStack.add(MouseStyle(
                 size: const Size(36, 36),
                 decoration: state.decoration.copyWith(
-                    color: Theme.of(context).primaryColor.withOpacity(0.2)),
+                    color:
+                        Theme.of(context).primaryColor.withValues(alpha: 200)),
                 visibleOnHover: true));
           }
 

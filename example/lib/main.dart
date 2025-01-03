@@ -25,7 +25,9 @@ class MyApp extends StatelessWidget {
             MouseStyle(
               size: const Size(7, 7),
               latency: const Duration(milliseconds: 25),
-              decoration: BoxDecoration(color: Theme.of(context).primaryColor, shape: BoxShape.circle),
+              decoration: BoxDecoration(
+                  color: Theme.of(context).primaryColor,
+                  shape: BoxShape.circle),
             ),
             MouseStyle(
               size: const Size(26, 26),
@@ -50,10 +52,12 @@ class MouseFollowerDemoPage extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          ContainerWithMouseStyle(title: "Default Style:", color: Colors.grey.shade50),
+          ContainerWithMouseStyle(
+              title: "Default Style:", color: Colors.grey.shade50),
           const Divider(height: 1),
           MouseOnHoverEvent(
-              child: ContainerWithMouseStyle(title: "OnHover Main Style:", color: Colors.red.shade50)),
+              child: ContainerWithMouseStyle(
+                  title: "OnHover Main Style:", color: Colors.red.shade50)),
           const Divider(height: 1),
           MouseOnHoverEvent(
               onHoverMouseCursor: SystemMouseCursors.none,
@@ -63,33 +67,43 @@ class MouseFollowerDemoPage extends StatelessWidget {
                   size: Size(15, 15),
                   latency: Duration(milliseconds: 75),
                   opacity: 0.5,
-                  decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.red),
+                  decoration:
+                      BoxDecoration(shape: BoxShape.circle, color: Colors.red),
                 ),
                 MouseStyle(
                   size: const Size(15, 15),
                   latency: const Duration(milliseconds: 0),
-                  child: kIsWeb ? Image.network("images/cursor.png") : Image.asset("images/cursor.png"),
+                  child: kIsWeb
+                      ? Image.network("images/cursor.png")
+                      : Image.asset("images/cursor.png"),
                 ),
               ],
-              child: ContainerWithMouseStyle(title: "Custom Cursor:", color: Colors.purple.shade50)),
+              child: ContainerWithMouseStyle(
+                  title: "Custom Cursor:", color: Colors.purple.shade50)),
           const Divider(height: 1),
-          MouseOnHoverEvent(customOnHoverMouseStylesStack: [
-            MouseStyle(
-              animationDuration: const Duration(milliseconds: 0),
-              opacity: 0.4,
-              size: const Size(200, 120),
-              alignment: Alignment.centerRight,
-              child: Container(
-                height: 100,
-                width: 250,
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10))),
-                child: kIsWeb
-                    ? Image.network("images/mouse_follower.jpg", fit: BoxFit.fill)
-                    : Image.asset("images/mouse_follower.jpg", fit: BoxFit.fill),
-              ),
-            ),
-          ], child: ContainerWithMouseStyle(title: "With Background:", color: Colors.green.shade50)),
+          MouseOnHoverEvent(
+              customOnHoverMouseStylesStack: [
+                MouseStyle(
+                  animationDuration: const Duration(milliseconds: 0),
+                  opacity: 0.4,
+                  size: const Size(200, 120),
+                  alignment: Alignment.centerRight,
+                  child: Container(
+                    height: 100,
+                    width: 250,
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                    child: kIsWeb
+                        ? Image.network("images/mouse_follower.jpg",
+                            fit: BoxFit.fill)
+                        : Image.asset("images/mouse_follower.jpg",
+                            fit: BoxFit.fill),
+                  ),
+                ),
+              ],
+              child: ContainerWithMouseStyle(
+                  title: "With Background:", color: Colors.green.shade50)),
           const Divider(height: 1),
           MouseOnHoverEvent(
               onHoverMouseCursor: SystemMouseCursors.none,
@@ -106,10 +120,13 @@ class MouseFollowerDemoPage extends StatelessWidget {
                 MouseStyle(
                   size: const Size(15, 15),
                   latency: const Duration(milliseconds: 0),
-                  child: kIsWeb ? Image.network("images/magnifier.png") : Image.asset("images/magnifier.png"),
+                  child: kIsWeb
+                      ? Image.network("images/magnifier.png")
+                      : Image.asset("images/magnifier.png"),
                 ),
               ],
-              child: ContainerWithMouseStyle(title: "Magnifier Function:", color: Colors.blue.shade50)),
+              child: ContainerWithMouseStyle(
+                  title: "Magnifier Function:", color: Colors.blue.shade50)),
           const Divider(height: 1),
           MouseOnHoverEvent(
               onHoverMouseCursor: SystemMouseCursors.none,
@@ -128,27 +145,31 @@ class MouseFollowerDemoPage extends StatelessWidget {
                   alignment: Alignment.topLeft,
                   size: Size(15, 15),
                   latency: Duration(milliseconds: 0),
-                  decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.red),
+                  decoration:
+                      BoxDecoration(shape: BoxShape.circle, color: Colors.red),
                 ),
                 const MouseStyle(
                   alignment: Alignment.topRight,
                   size: Size(15, 15),
                   latency: Duration(milliseconds: 0),
-                  decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.red),
+                  decoration:
+                      BoxDecoration(shape: BoxShape.circle, color: Colors.red),
                 ),
                 const MouseStyle(
                   size: Size(20, 20),
                   latency: Duration(milliseconds: 0),
-                  decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.black),
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle, color: Colors.black),
                 ),
                 const MouseStyle(
                   size: Size(5, 5),
                   latency: Duration(milliseconds: 0),
-                  decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.red),
+                  decoration:
+                      BoxDecoration(shape: BoxShape.circle, color: Colors.red),
                 ),
-
               ],
-              child: ContainerWithMouseStyle(title: "Custom Draw:", color: Colors.brown.shade50)),
+              child: ContainerWithMouseStyle(
+                  title: "Custom Draw:", color: Colors.brown.shade50)),
         ],
       ),
     );
@@ -158,7 +179,8 @@ class MouseFollowerDemoPage extends StatelessWidget {
 class ContainerWithMouseStyle extends StatelessWidget {
   final String title;
   final Color color;
-  const ContainerWithMouseStyle({super.key, required this.title, required this.color});
+  const ContainerWithMouseStyle(
+      {super.key, required this.title, required this.color});
 
   @override
   Widget build(BuildContext context) {

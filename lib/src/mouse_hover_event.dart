@@ -11,7 +11,7 @@ import 'controller/animated_mouse_follower_controller.dart';
 class MouseOnHoverEvent extends StatefulWidget {
   /// Creates an [MouseOnHoverEvent] with the specified [child].
   const MouseOnHoverEvent(
-      {Key? key,
+      {super.key,
       required this.child,
       this.decoration,
       this.size,
@@ -22,8 +22,7 @@ class MouseOnHoverEvent extends StatefulWidget {
       this.animationDuration,
       this.opacity,
       this.alignment,
-      this.latency})
-      : super(key: key);
+      this.latency});
 
   /// The widget that is wrapped with the animated cursor mouse region.
   final Widget child;

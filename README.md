@@ -36,7 +36,7 @@ Add to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  mouse_follower: ^1.2.2
+  mouse_follower: 
 ```
 
 import the library path:

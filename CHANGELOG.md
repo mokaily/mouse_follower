@@ -1,3 +1,7 @@
+## 1.3.7
+* Supporting latest Flutter SDK
+* Fixes some deprecated functions
+
 ## 1.2.3
 * Re-named some variables
 * Enhanced documentation
