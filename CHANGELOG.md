@@ -1,4 +1,4 @@
-## 1.4.1
+## 1.4.2
 * Rewrote notifier logic for improved maintainability.
 * Removed dependency on external state management packages.
 
