@@ -229,28 +229,20 @@ MouseOnHoverEvent(
 We need your support. Projects like this can not be successful without support from the community. If you find this project useful, and would like to support further development and ongoing maintenance, please consider donating.
 
 <p align="center">
-  <a href="https://opencollective.com/mouse_follower/donate" target="_blank">
-    <img src="https://opencollective.com/mouse_follower/donate/button@2x.png?color=blue" width=300 />
-  </a>
-</p>
-
-<p align="center">
   <a href="https://www.paypal.com/donate/?hosted_button_id=9PCKHLMEQJUS4" target="_blank">
     <img src="https://raw.githubusercontent.com/aha999/DonateButtons/master/Paypal.png" width=300 />
   </a>
 </p>
 
 <p align="center">
-  <a href="https://www.buymeacoffee.com/mokaily" target="_blank">
-    <img src="https://bizcolumnist.com/wp-content/uploads/2022/12/bmc-full-logo.png" width=300 />
-  </a>
+<a href="https://www.buymeacoffee.com/mokaily" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" width=300  alt="Buy Me A Coffee" ></a>
 </p>
 
 ## Sponsors
 Want to become a sponsor? [[Become a Sponsor](https://github.com/sponsors/mokaily)]
 <p align="center">
-<a href="https://github.com/sponsors/mokaily">
-<img src="https://opensheetmusicdisplay.org/wp-content/uploads/sites/2/2021/01/dkU4ADpMLKIaaETqhNFh.png" width="300">
+<a href="https://github.com/sponsors/mokaily" target="_blank">
+  <img src="https://img.shields.io/badge/Sponsor%20me%20on-GitHub-24292f?logo=githubsponsors&logoColor=white&style=for-the-badge" width="300" alt="Sponsor me on GitHub">
 </a>
 </p>
 
