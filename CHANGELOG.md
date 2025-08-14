@@ -1,3 +1,7 @@
+## 2.0.1
+* Rewrote notifier logic for improved maintainability.
+* Removed dependency on external state management packages.
+
 ## 1.3.7
 * Supporting latest Flutter SDK
 * Fixes some deprecated functions

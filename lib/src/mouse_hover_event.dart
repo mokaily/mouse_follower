@@ -3,9 +3,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:mouse_follower/mouse_follower.dart';
-import 'package:provider/provider.dart';
-
-import 'controller/animated_mouse_follower_controller.dart';
 
 /// A widget that adds animated cursor effects to its child within a mouse region.
 class MouseOnHoverEvent extends StatefulWidget {
@@ -58,23 +55,25 @@ class MouseOnHoverEventState extends State<MouseOnHoverEvent> {
 
   @override
   Widget build(BuildContext context) {
-    final provider = context.read<MouseFollowerProvider>();
+    final provider = MouseFollowerScope.read(context);
 
     return MouseRegion(
       key: _key,
       opaque: false,
-      onHover: (event) => provider.changeCursor(_key,
-          latency: widget.latency,
-          mouseCursor: widget.onHoverMouseCursor,
-          decoration: widget.decoration,
-          mouseChild: widget.mouseChild,
-          customOnHoverMouseStylesStack: widget.customOnHoverMouseStylesStack,
-          size: widget.size,
-          animationCurve: widget.animationCurve,
-          animationDuration: widget.animationDuration,
-          alignment: widget.alignment,
-          opacity: widget.opacity,
-          event: event),
+      onHover: (event) => provider.changeCursor(
+        _key,
+        latency: widget.latency,
+        mouseCursor: widget.onHoverMouseCursor,
+        decoration: widget.decoration,
+        mouseChild: widget.mouseChild,
+        customOnHoverMouseStylesStack: widget.customOnHoverMouseStylesStack,
+        size: widget.size,
+        animationCurve: widget.animationCurve,
+        animationDuration: widget.animationDuration,
+        alignment: widget.alignment,
+        opacity: widget.opacity,
+        event: event,
+      ),
       onExit: (_) => provider.resetCursor(),
       child: widget.child,
     );
