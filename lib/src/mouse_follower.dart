@@ -3,9 +3,53 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 import 'controller/animated_mouse_follower_controller.dart';
+
+/// An InheritedNotifier that exposes a [MouseFollowerProvider] to descendants.
+class MouseFollowerScope extends InheritedNotifier<MouseFollowerProvider> {
+  const MouseFollowerScope({
+    super.key,
+    required MouseFollowerProvider notifier,
+    required super.child,
+  }) : super(notifier: notifier);
+
+  /// Subscribe to updates (rebuilds when the notifier notifies).
+  static MouseFollowerProvider watch(BuildContext context) {
+    final scope = context.dependOnInheritedWidgetOfExactType<MouseFollowerScope>();
+    assert(scope != null, 'MouseFollowerScope not found in context.');
+    return scope!.notifier!;
+  }
+
+  /// Read without subscribing to updates.
+  static MouseFollowerProvider read(BuildContext context) {
+    final element = context.getElementForInheritedWidgetOfExactType<MouseFollowerScope>();
+    assert(element != null, 'MouseFollowerScope not found in context.');
+    return (element!.widget as MouseFollowerScope).notifier!;
+  }
+}
+
+/// Drop-in style consumer to mimic `Consumer<MouseFollowerProvider>`.
+class MouseFollowerConsumer extends StatelessWidget {
+  const MouseFollowerConsumer({
+    super.key,
+    required this.builder,
+    this.child,
+  });
+
+  final Widget? child;
+  final Widget Function(
+    BuildContext context,
+    MouseFollowerProvider provider,
+    Widget? child,
+  ) builder;
+
+  @override
+  Widget build(BuildContext context) {
+    final provider = MouseFollowerScope.watch(context);
+    return builder(context, provider, child);
+  }
+}
 
 /// A widget that adds animated cursor effects to its child within a mouse region.
 class MouseFollower extends StatelessWidget {
@@ -41,24 +85,21 @@ class MouseFollower extends StatelessWidget {
     this.onHoverMouseCursor = MouseCursor.defer,
   }) : super(key: key);
 
-  void _onCursorUpdate(PointerEvent event, BuildContext context) => context
-      .read<MouseFollowerProvider>()
-      .updateCursorPosition(event.position);
+  void _onCursorUpdate(PointerEvent event, BuildContext context) =>
+      MouseFollowerScope.read(context).updateCursorPosition(event.position);
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => MouseFollowerProvider(),
-      child: Consumer<MouseFollowerProvider>(
+    return MouseFollowerScope(
+      notifier: MouseFollowerProvider(),
+      child: MouseFollowerConsumer(
         child: child,
         builder: (context, provider, c) {
           final state = provider.state;
           final bool visibility;
 
           Widget ccc = MouseRegion(
-            cursor: state.isHover
-                ? state.customMouseCursor ?? onHoverMouseCursor
-                : defaultMouseCursor,
+            cursor: state.isHover ? state.customMouseCursor ?? onHoverMouseCursor : defaultMouseCursor,
             child: child,
           );
 
@@ -74,33 +115,28 @@ class MouseFollower extends StatelessWidget {
 
           if (mouseStylesStack != null && mouseStylesStack!.isNotEmpty) {
             generatedMouseStylesStack = mouseStylesStack!
-                .map((item) => MouseStyle.copy(item,
-                    showVisibleOnHover: item.visibleOnHover))
+                .map((item) => MouseStyle.copy(item, showVisibleOnHover: item.visibleOnHover))
                 .toList();
           } else if (showDefaultMouseStyle) {
             generatedMouseStylesStack.add(MouseStyle(
-                decoration: state.decoration.copyWith(
-                    color:
-                        Theme.of(context).primaryColor.withValues(alpha: 200)),
+                decoration:
+                    state.decoration.copyWith(color: Theme.of(context).primaryColor.withValues(alpha: 200)),
                 visibleOnHover: false));
           }
 
           if (state.isHover && state.customOnHoverMouseStylesStack != null) {
-            generatedOnHoverMouseStylesStack = state
-                .customOnHoverMouseStylesStack!
+            generatedOnHoverMouseStylesStack = state.customOnHoverMouseStylesStack!
                 .map((item) => MouseStyle.copy(item, showVisibleOnHover: true))
                 .toList();
-          } else if (onHoverMouseStylesStack != null &&
-              onHoverMouseStylesStack!.isNotEmpty) {
+          } else if (onHoverMouseStylesStack != null && onHoverMouseStylesStack!.isNotEmpty) {
             generatedOnHoverMouseStylesStack = onHoverMouseStylesStack!
                 .map((item) => MouseStyle.copy(item, showVisibleOnHover: true))
                 .toList();
           } else if (showDefaultMouseStyle) {
             generatedOnHoverMouseStylesStack.add(MouseStyle(
                 size: const Size(36, 36),
-                decoration: state.decoration.copyWith(
-                    color:
-                        Theme.of(context).primaryColor.withValues(alpha: 200)),
+                decoration:
+                    state.decoration.copyWith(color: Theme.of(context).primaryColor.withValues(alpha: 200)),
                 visibleOnHover: true));
           }
 
@@ -118,9 +154,7 @@ class MouseFollower extends StatelessWidget {
           List<Widget> mouseStyleListBackground = !state.isHover
               ? defaultList + generatedMouseStylesStack
               : defaultList +
-                  generatedMouseStylesStack
-                      .where((element) => element.visibleOnHover == true)
-                      .toList() +
+                  generatedMouseStylesStack.where((element) => element.visibleOnHover == true).toList() +
                   generatedOnHoverMouseStylesStack;
 
           return visibility
@@ -166,8 +200,7 @@ class MouseStyle extends StatelessWidget {
   });
 
   // Add a copy constructor to create a deep copy of the object
-  MouseStyle.copy(MouseStyle other,
-      {super.key, required bool showVisibleOnHover})
+  MouseStyle.copy(MouseStyle other, {super.key, required bool showVisibleOnHover})
       : visibleOnHover = showVisibleOnHover,
         size = other.size,
         latency = other.latency,
@@ -183,7 +216,7 @@ class MouseStyle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Access the MouseFollowerProvider to get the current state
-    final provider = context.read<MouseFollowerProvider>();
+    final provider = MouseFollowerScope.read(context);
     final state = provider.state;
 
     // Determine if the widget is being hovered over
@@ -293,19 +326,16 @@ class MouseStyle extends StatelessWidget {
         duration: mouseLatency,
         child: IgnorePointer(
           child: Opacity(
-            opacity: customOpacity ??
-                1.0, // Set the opacity value (0.0 = fully transparent, 1.0 = fully opaque)
+            opacity:
+                customOpacity ?? 1.0, // Set the opacity value (0.0 = fully transparent, 1.0 = fully opaque)
             child: AnimatedContainer(
               transform: transform,
               alignment: Alignment.center,
-              clipBehavior:
-                  dec == null ? Clip.none : Clip.antiAliasWithSaveLayer,
+              clipBehavior: dec == null ? Clip.none : Clip.antiAliasWithSaveLayer,
               decoration: dec,
               duration: animatedDuration ?? const Duration(milliseconds: 300),
               curve: animatedCurve ?? Curves.easeOutExpo,
-              child: (isHovering &&
-                      state.child != null &&
-                      state.child.runtimeType != MouseStyle)
+              child: (isHovering && state.child != null && state.child.runtimeType != MouseStyle)
                   ? state.child
                   : child,
             ),
