@@ -77,7 +77,7 @@ class MouseFollower extends StatelessWidget {
   final MouseCursor onHoverMouseCursor;
 
   const MouseFollower({
-    Key? key,
+    super.key,
     required this.child,
     this.mouseStylesStack,
     this.onHoverMouseStylesStack,
@@ -85,7 +85,7 @@ class MouseFollower extends StatelessWidget {
     this.isVisible,
     this.defaultMouseCursor = MouseCursor.defer,
     this.onHoverMouseCursor = MouseCursor.defer,
-  }) : super(key: key);
+  });
 
   void _onCursorUpdate(PointerEvent event, BuildContext context) =>
       MouseFollowerScope.read(context).updateCursorPosition(event.position);
@@ -269,28 +269,28 @@ class MouseStyle extends StatelessWidget {
     if (cursorAlignment == Alignment.center) {
       t = state.offset.dy - h / 2;
       l = state.offset.dx - w / 2;
-    } else if (alignment == Alignment.centerRight) {
+    } else if (cursorAlignment == Alignment.centerRight) {
       t = state.offset.dy - h / 2;
       l = state.offset.dx;
-    } else if (alignment == Alignment.centerLeft) {
+    } else if (cursorAlignment == Alignment.centerLeft) {
       t = state.offset.dy - h / 2;
       l = state.offset.dx - w;
-    } else if (alignment == Alignment.bottomCenter) {
+    } else if (cursorAlignment == Alignment.bottomCenter) {
       t = state.offset.dy;
       l = state.offset.dx - w / 2;
-    } else if (alignment == Alignment.bottomRight) {
+    } else if (cursorAlignment == Alignment.bottomRight) {
       t = state.offset.dy;
       l = state.offset.dx;
-    } else if (alignment == Alignment.bottomLeft) {
+    } else if (cursorAlignment == Alignment.bottomLeft) {
       t = state.offset.dy;
       l = state.offset.dx - w;
-    } else if (alignment == Alignment.topCenter) {
+    } else if (cursorAlignment == Alignment.topCenter) {
       t = state.offset.dy - h;
       l = state.offset.dx - w / 2;
-    } else if (alignment == Alignment.topRight) {
+    } else if (cursorAlignment == Alignment.topRight) {
       t = state.offset.dy - h;
       l = state.offset.dx;
-    } else if (alignment == Alignment.topLeft) {
+    } else if (cursorAlignment == Alignment.topLeft) {
       t = state.offset.dy - h;
       l = state.offset.dx - w;
     } else {
