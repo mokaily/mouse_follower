@@ -1,3 +1,6 @@
+## 1.4.3
+* Fix known bug related to alignment in the follower widget.
+
 ## 1.4.2
 * Rewrote notifier logic for improved maintainability.
 * Removed dependency on external state management packages.
